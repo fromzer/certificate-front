@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {LoginUser, RegisteredUser, UserGift} from "../interfaces";
+import {AuthData, LoginUser, RegisteredUser, UserGift} from "../interfaces";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {tap} from "rxjs/operators";
@@ -14,13 +14,14 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  login(loginUser: LoginUser): Observable<{ token: string }> {
-    return this.http.post<{ token: string }>('/api/v1/auth/login', loginUser)
+  login(loginUser: LoginUser): Observable<AuthData> {
+    return this.http.post<AuthData>('/api/v1/auth/login', loginUser)
       .pipe(
         tap(
-          ({token}) => {
-            localStorage.setItem('auth-token', this.TOKEN_SUB_STRING + token)
-            this.setToken(this.TOKEN_SUB_STRING + token)
+          (data) => {
+            localStorage.setItem('auth-token', this.TOKEN_SUB_STRING + data.token)
+            localStorage.setItem('auth-id', String(data.id))
+            this.setToken(this.TOKEN_SUB_STRING + data.token)
           }
         )
       )
