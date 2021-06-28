@@ -3,17 +3,18 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {LoginPageComponent} from './login-page/login-page.component';
+import {LoginPageComponent} from './features/login-page/login-page.component';
 import {AuthLayoutComponent} from './shared/layouts/auth-layout/auth-layout.component';
 import {SiteLayoutComponent} from './shared/layouts/site-layout/site-layout.component';
-import {RegisterPageComponent} from './register-page/register-page.component';
+import {RegisterPageComponent} from './features/register-page/register-page.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/http";
 import {TokenInterceptor} from "./shared/classes/token.interceptor";
-import { CertificatesPageComponent } from './certificates-page/certificates-page.component';
-import { OrdersPageComponent } from './orders-page/orders-page.component';
+import { CertificatesPageComponent } from './features/certificates-page/certificates-page.component';
+import { OrdersPageComponent } from './features/orders-page/orders-page.component';
 import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
+import { CertificateInfoPageComponent } from './features/certificates-page/certificate-info-page/certificate-info-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     CertificatesPageComponent,
     OrdersPageComponent,
     UserInfoPageComponent,
-    LoaderComponent
+    LoaderComponent,
+    CertificateInfoPageComponent
   ],
   imports: [
     BrowserModule,
