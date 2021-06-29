@@ -7,7 +7,7 @@ import {RegisterPageComponent} from "./features/register-page/register-page.comp
 import {AuthGuard} from "./shared/classes/auth.guard";
 import {CertificatesPageComponent} from "./features/certificates-page/certificates-page.component";
 import {OrdersPageComponent} from "./features/orders-page/orders-page.component";
-import {UserInfoPageComponent} from "./user-info-page/user-info-page.component";
+import {UserInfoPageComponent} from "./features/user-info-page/user-info-page.component";
 import {CertificateInfoPageComponent} from "./features/certificates-page/certificate-info-page/certificate-info-page.component";
 
 const routes: Routes = [

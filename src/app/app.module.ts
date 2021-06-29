@@ -12,7 +12,7 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from "@angular/common/h
 import {TokenInterceptor} from "./shared/classes/token.interceptor";
 import { CertificatesPageComponent } from './features/certificates-page/certificates-page.component';
 import { OrdersPageComponent } from './features/orders-page/orders-page.component';
-import { UserInfoPageComponent } from './user-info-page/user-info-page.component';
+import { UserInfoPageComponent } from './features/user-info-page/user-info-page.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CertificateInfoPageComponent } from './features/certificates-page/certificate-info-page/certificate-info-page.component';
 

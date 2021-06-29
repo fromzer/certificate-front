@@ -1,0 +1,15 @@
+<div class="col s12 m7">
+  <h3 class="header">User Info</h3>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="https://lorempixel.com/400/200/business/6">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content" *ngIf="user$ | async as user;">
+        <span><h5>Login: {{user.login}}</h5></span>
+        <span><h5>First name: {{user.firstName}}</h5></span>
+        <span><h5>Last name: {{user.lastName}}</h5></span>
+      </div>
+    </div>
+  </div>
+</div>
