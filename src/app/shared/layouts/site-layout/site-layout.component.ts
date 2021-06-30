@@ -11,7 +11,8 @@ export class SiteLayoutComponent implements OnInit {
   links = [
     {url: '/certificates', name: 'Overview'},
     {url: '/orders', name: 'Orders'},
-    {url: '/userinfo', name: 'User info'}
+    {url: '/userinfo', name: 'User info'},
+    {url: '/cart', name: 'Shopping cart'}
   ]
 
   constructor(private auth: AuthService,

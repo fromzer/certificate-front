@@ -2,7 +2,6 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Certificate, CertificateGetResponse} from "../interfaces";
 import {Observable} from "rxjs";
-import {Params} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'

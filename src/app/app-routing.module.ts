@@ -9,6 +9,7 @@ import {CertificatesPageComponent} from "./features/certificates-page/certificat
 import {OrdersPageComponent} from "./features/orders-page/orders-page.component";
 import {UserInfoPageComponent} from "./features/user-info-page/user-info-page.component";
 import {CertificateInfoPageComponent} from "./features/certificates-page/certificate-info-page/certificate-info-page.component";
+import {CartPageComponent} from "./features/cart-page/cart-page.component";
 
 const routes: Routes = [
   {
@@ -24,6 +25,7 @@ const routes: Routes = [
       {path: 'certificates/:id', component: CertificateInfoPageComponent},
       {path: 'orders', component: OrdersPageComponent},
       {path: 'userinfo', component: UserInfoPageComponent},
+      {path: 'cart', component: CartPageComponent}
     ]
   }
 ];

@@ -1,0 +1,37 @@
+<h3>Cart</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Certificate name</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>#</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let item of items">
+    <td>{{ item.name }}</td>
+    <td>{{ item.description }}</td>
+    <td>{{ item.price | currency }}</td>
+    <td><button class="waves-effect waves-light btn" (click)="removeItem(item)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>
+<h4>Cost: {{getSum() | currency }}</h4>
+<div class="content">
+  <button class="waves-effect waves-light btn" (click)="clearCart()">Clear</button>&nbsp;
+  <button class="waves-effect waves-light btn" (click)="createOrder(items)">Buy</button>
+</div>
+<!--<div *ngFor="let item of items">-->
+<!--  <span>{{ item.name }} </span>-->
+<!--  <span>{{ item.price | currency }}</span>-->
+<!--  -->
+<!--</div>-->
+<!--<div>-->
+<!--  <span>Cost:{{getSum()}}</span>-->
+<!--  <span></span>-->
+<!--  <button (click)="clearCart()">Clear</button>-->
+<!--  <button (click)="createOrder(items)">Buy</button>-->
+<!--</div>-->
+

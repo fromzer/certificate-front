@@ -15,6 +15,7 @@ import { OrdersPageComponent } from './features/orders-page/orders-page.componen
 import { UserInfoPageComponent } from './features/user-info-page/user-info-page.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CertificateInfoPageComponent } from './features/certificates-page/certificate-info-page/certificate-info-page.component';
+import { CartPageComponent } from './features/cart-page/cart-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CertificateInfoPageComponent } from './features/certificates-page/certi
     OrdersPageComponent,
     UserInfoPageComponent,
     LoaderComponent,
-    CertificateInfoPageComponent
+    CertificateInfoPageComponent,
+    CartPageComponent
   ],
   imports: [
     BrowserModule,

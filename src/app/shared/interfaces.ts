@@ -29,8 +29,8 @@ export interface Tag {
 }
 
 export interface Tag {
-  id: number;
-  name: string;
+  id: number
+  name: string
 }
 
 export interface Certificate {
@@ -41,7 +41,23 @@ export interface Certificate {
   duration: number
   createDate: Date
   lastUpdateDate?: Date
-  tags: Tag[];
+  tags: Tag[]
+}
+
+export interface CertificateOrder {
+  id: number
+}
+
+export interface Order {
+  certificates: Certificate[]
+}
+
+export interface OrderPostResponse {
+  id: number
+  cost: number
+  purchaseDate: Date
+  user: UserGift
+  certificates: Certificate[]
 }
 
 export interface CertificateGetResponse {

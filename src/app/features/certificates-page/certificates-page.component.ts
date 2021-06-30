@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CertificatesService} from "../../shared/service/certificates.service";
-import {CertificateGetResponse} from "../../shared/interfaces";
+import {Certificate, CertificateGetResponse} from "../../shared/interfaces";
 import {Observable} from "rxjs";
+import {CartService} from "../../shared/service/cart.service";
 
 @Component({
   selector: 'app-certificates-page',
@@ -13,7 +14,8 @@ export class CertificatesPageComponent implements OnInit {
  // loading = false
   certificates$: Observable<CertificateGetResponse> | undefined
 
-  constructor(private certificateService: CertificatesService) { }
+  constructor(private certificateService: CertificatesService,
+              private cartService: CartService) { }
 
   ngOnInit() {
   //  this.loading = true
@@ -26,4 +28,8 @@ export class CertificatesPageComponent implements OnInit {
     //   }
   }
 
+  addToCart(certificate: Certificate) {
+    window.alert('Your product has been added to the cart!');
+    this.cartService.addToCart(certificate);
+  }
 }
