@@ -16,6 +16,7 @@ import { UserInfoPageComponent } from './features/user-info-page/user-info-page.
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { CertificateInfoPageComponent } from './features/certificates-page/certificate-info-page/certificate-info-page.component';
 import { CartPageComponent } from './features/cart-page/cart-page.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CartPageComponent } from './features/cart-page/cart-page.component';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     {

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpParams} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Certificate, OrderGetResponse, OrderPostResponse} from "../interfaces";
 import {CartService} from "./cart.service";
@@ -16,8 +16,8 @@ export class OrdersService {
               private router: Router) {
   }
 
-  getOrdersByUserId(id: string): Observable<OrderGetResponse> {
-    return this.http.get<OrderGetResponse>(`/api/v1/users/${id}/orders`)
+  getOrdersByUserId(id: string, params: HttpParams): Observable<OrderGetResponse> {
+    return this.http.get<OrderGetResponse>(`/api/v1/users/${id}/orders`, {params})
   }
 
   createOrder(certificates: Certificate[], id: string) {

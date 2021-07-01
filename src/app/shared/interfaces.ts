@@ -77,13 +77,13 @@ export interface CertificateGetResponse {
     },
     "last": {
       "href": string
-    };
-    page: {
-      size: number,
-      totalElements: number,
-      totalPages: number,
-      number: number
     }
+  };
+  page: {
+    size: number,
+    totalElements: number,
+    totalPages: number,
+    number: number
   }
 }
 
@@ -112,12 +112,12 @@ export interface OrderGetResponse {
     },
     "last": {
       "href": string
-    };
-    page: {
-      size: number,
-      totalElements: number,
-      totalPages: number,
-      number: number
     }
-  }
+  };
+  page: {
+    size: number,
+    totalElements: number,
+    totalPages: number,
+    number: number
+  };
 }

@@ -43,6 +43,8 @@ export class AuthService {
 
   logout() {
     // @ts-ignore
+    this.http.post('/api/v1/auth/logout').subscribe()
+    // @ts-ignore
     this.setToken(null)
     localStorage.clear()
   }
