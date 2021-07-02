@@ -1,8 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {AuthService} from "../shared/service/auth.service";
+import {AuthService} from "../../shared/service/auth.service";
 import {Subscription} from "rxjs";
 import {ActivatedRoute, Params, Router} from "@angular/router";
+import {MaterialService} from "../../shared/classes/material.service";
 
 @Component({
   selector: 'app-login-page',
@@ -32,9 +33,9 @@ export class LoginPageComponent implements OnInit, OnDestroy {
 
     this.route.queryParams.subscribe((params:Params) => {
       if (params['registered']) {
-        // авторизованы
+        MaterialService.toast('Now you can log in using your data')
       } else if (params['accessDenied']) {
-        // не авторизованы
+        MaterialService.toast('First, log in')
       }
     })
   }

@@ -1,0 +1,35 @@
+<div class="row" *ngIf="certificate$ | async as certificate;">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{certificate.name}}</span>
+        <span class="s1 light-blue-text" *ngFor="let tag of certificate.tags">#{{tag.name}}</span>
+        <p>{{certificate.description}}</p>
+      </div>
+      <div class="card-action">
+        <table>
+          <thead>
+          <tr>
+            <th>Creation date:</th>
+            <th>Last Update date:</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>{{certificate.createDate | date: 'full'}}</td>
+            <td>{{certificate.lastUpdateDate | date: 'full'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="card-action">
+        <p>Duration: {{certificate.duration}}</p>
+      </div>
+      <div class="card-action">
+        <a routerLink="/certificates">Back</a>
+        <button class="modal-action btn waves-effect"><i class="tiny material-icons" (click)="addToCart(certificate)">add_shopping_cart</i></button>
+      </div>
+    </div>
+  </div>
+</div>

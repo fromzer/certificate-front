@@ -1,0 +1,35 @@
+<div class="page-title">
+  <h4>Gift-certificates</h4>
+</div>
+<div class="row" *ngIf="certificates$ | async as certResponse; else loader">
+  <div class="col s6"
+       *ngFor="let certificate of certResponse._embedded.giftCertificateList | paginate:
+    { itemsPerPage: certResponse.page.size, currentPage: certResponse.page.number, totalItems: certResponse.page.totalElements }">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{certificate.name}}</span>
+        <p>{{certificate.description}}</p>
+      </div>
+      <div class="card-action">
+        <span class="category" *ngFor="let tag of certificate?.tags">#{{tag?.name}}</span>
+        <div><span>{{certificate.price}}$</span></div>
+        <a
+          [routerLink]="['/certificates', certificate.id]"
+        >Details</a>
+        <button class="modal-action btn waves-effect"><i class="tiny material-icons" (click)="addToCart(certificate)">add_shopping_cart</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container" align="center">
+  <div class="has-text-centered">
+    <pagination-controls (pageChange)="getCertificates($event.valueOf())"></pagination-controls>
+  </div>
+</div>
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+
+
+
